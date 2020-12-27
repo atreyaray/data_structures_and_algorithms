@@ -1,3 +1,4 @@
+import time
 class ListNode :
     def __init__ (self, value = 0, left = None, right = None) :
         self.val = value
@@ -61,6 +62,17 @@ class bst :
             temp = temp.right
         return temp.val
 
+    def predecessor_iter(self, val) :
+        temp = self.root
+        best = None
+        while temp != None :
+            if temp.val >= val :
+                temp = temp.left
+            else :
+                best = temp.val
+                temp = temp.right
+        return best
+    
     def predecessor(self, val) :
         def _pred(n, best) :
             if n.val >= val :
@@ -115,6 +127,7 @@ def main() :
     print('The element {n} does exist in the tree : {cond}'.format(n = 3, cond = b.search(3)))
     print('The element {n} does exist in the tree : {cond}'.format(n = 2, cond = b.search(2)))
     print('Predecessor of {n} is {ans}'.format(n = 3, ans = b.predecessor(3)))
+    print('Predecessor of {n} (iteratively) is {ans}'.format(n = 3, ans = b.predecessor_iter(3)))
     print('Successor of {n} is {ans}'.format(n = 3, ans = b.successor(3)))
     print('Smallest element is {n}'.format(n = b.min()))
     print('Largest element is {n}'.format(n = b.max()))
