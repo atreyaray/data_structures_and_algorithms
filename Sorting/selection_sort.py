@@ -1,3 +1,6 @@
+# Time Complexity O(n^2)
+# Space Complexity O(n)
+
 def quickSort(a) :
     length = len(a)
     # i goes from 0 to length - 1
