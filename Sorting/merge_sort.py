@@ -1,4 +1,4 @@
-# Time complexity O(n^2)
+# Time complexity O(n^logn)
 # Space complexity O(n)
 # 
 # Divide and Conquer used
